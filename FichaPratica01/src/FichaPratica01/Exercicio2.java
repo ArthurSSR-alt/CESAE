@@ -8,7 +8,7 @@ public class Exercicio2 {
         Scanner input = new Scanner(System.in);
 
         //Declarar variáveis
-        int num1, num2, soma, subtração, multiplicação, divisão;
+        int num1, num2, soma, subtracao, multiplicacao, divisao;
 
         //ler num1
         System.out.print("Insira um número: ");
@@ -23,13 +23,13 @@ public class Exercicio2 {
 
 
         //Subtrair num1 e num2
-        subtração = num1 - num2;
+        subtracao = num1 - num2;
 
         //Multiplicar num1 e num2
-        multiplicação = num1 * num2;
+        multiplicacao = num1 * num2;
 
         //Dividir num1 e num2
-        divisão = num1 / num2;
+        divisao = num1 / num2;
 
         //Apresentar o resultado
 
@@ -37,15 +37,15 @@ public class Exercicio2 {
 
         //Apresentar o resultado
 
-        System.out.println("Subtração: "+ subtração);
+        System.out.println("Subtração: "+ subtracao);
 
         //Apresentar o resultado
 
-        System.out.println("Multiplicação: "+ multiplicação);
+        System.out.println("Multiplicação: "+ multiplicacao);
 
         //Apresentar o resultado
 
-        System.out.println("Divisão: "+ divisão);
+        System.out.println("Divisão: "+ divisao);
 
 
     }

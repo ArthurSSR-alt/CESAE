@@ -18,7 +18,7 @@ public class Exercicio03 {
         largura = input.nextInt();
 
         // calcular per
-        perimetro = comprimento + largura;
+        perimetro = comprimento + comprimento + largura + largura;
 
 
         // calcular area

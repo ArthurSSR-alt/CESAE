@@ -10,12 +10,18 @@ public class Exercicio01 {
         // Declarar variáveis
         int num1, num2, soma;
 
-        //ler num1
+        //ler num1 ( escreve para o utilizador ler o que é pretendido dele)
+
         System.out.print("Insira um número: ");
+
+        //input vai recolhe numero introduzidos pelo utilizador e grava na caixa (num1)
+
         num1 = input.nextInt();
 
-        //ler num2
+        //ler num2 ( escreve para o utilizador ler o que é pretendido dele)
         System.out.print("Insira outro número: ");
+
+        //vai recolher numero introduzidos pelo utilizador e grava na caixa (num2)
         num2 = input.nextInt();
 
 
