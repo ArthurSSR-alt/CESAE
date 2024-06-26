@@ -6,12 +6,19 @@ public class Exercicio01 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int valor1, valor2, resultado;
+        String operacao;
         String txt;
 
-        System.out.println("Introduza um valor: ");
+
+        System.out.print("Introduza um valor: ");
         valor1 = input.nextInt();
-        System.out.println("introduza outro valor: ");
+        System.out.print("introduza outro valor: ");
         valor2 = input.nextInt();
+        System.out.println("Operação desejada (+ - * /): ");
+        operacao = input.next();
+
+
+
 
 
 
@@ -19,23 +26,23 @@ public class Exercicio01 {
 
         //Perguntar ao utilizador se desejar repetir, efetuando novos cálculos.
         System.out.print("Deseja continuar? (Introduza s/n): ");
+
         txt = input.next();
 
-        do {
-            System.out.println("Soma");
-            System.out.println("Subtração");
-            System.out.println("Divisão");
-            System.out.print("Operação desejada (+ - * /): ");
-            resultado = input.next();
 
-            switch (resultado) {
+
+        do {
+
+            switch (operacao) {
 
                 case "+": // Soma
+
                     resultado = valor1 + valor2;
                     System.out.println(valor1 + " + " + valor2 + " = " + resultado);
                     break;
 
                 case "-": // Subtracao
+
                     resultado = valor1 - valor2;
                     System.out.println(valor1 + " - " + valor2 + " = " + resultado);
                     break;
