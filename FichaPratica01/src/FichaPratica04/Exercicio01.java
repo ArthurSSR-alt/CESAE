@@ -18,17 +18,11 @@ public class Exercicio01 {
         operacao = input.next();
 
 
-
-
-
-
-
-
         //Perguntar ao utilizador se desejar repetir, efetuando novos cálculos.
+
         System.out.print("Deseja continuar? (Introduza s/n): ");
 
         txt = input.next();
-
 
 
         do {
@@ -64,8 +58,8 @@ public class Exercicio01 {
 
             }
 
-        } while (resultado != 0) ;
+        } while (false);
     }
 
 
-    }
+}
