@@ -6,33 +6,43 @@ public class Exercicio07 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        int[] vetor = new int[5];
-        int antecessor;
-        boolean maior = true;
+        // Declarar variáveis
+        int[] vetor = new int[10];
+        int maiorPar;
 
-        //ler o vetor
-        for (int i=0; i< vetor.length; i++){
-            System.out.print("Número ["+i+"]: ");
+        // Ler vetor
+        for (int i = 0; i < vetor.length; i++) {
+            System.out.print("Insira no Vetor[" + i + "]: ");
             vetor[i] = input.nextInt();
-
         }
-        antecessor = vetor[0];
-        //Verificar se os elementos estão em ordem crescente
 
-        for (int i=0; i< vetor.length; i++){
+        maiorPar = 1;
 
-            if (vetor[i] < antecessor){
+        for (int i = 0; i < vetor.length; i++) {
 
-                antecessor = vetor[i];
-                maior = false;
+            if(vetor[i]%2==0){ // Se o meu numero atual for par
+
+                if(maiorPar%2!=0){
+                    maiorPar=vetor[i];
+                }else{
+
+                    if(vetor[i]>maiorPar){
+                        maiorPar=vetor[i];
+                    }
+
+                }
+
             }
 
         }
-        if (maior){
-            System.out.println("Maior: ");
 
+        if(maiorPar%2!=0){
+            System.out.println("Sem pares");
         }else{
-            System.out.println();
+            System.out.println("Maior Par: " + maiorPar);
         }
+
+
+
     }
 }
