@@ -1,35 +1,34 @@
 package FichaPratica07;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class Exercicio06 {
-    public class PessoaMaisVelha {
-        public static void main(String[] args) {
-            String nomeFicheiro = "Files/FichaPratica07/exercicio_06.txt";
+    public static  void pessoaMaisVelha(String path) throws FileNotFoundException {
 
-            String nomeMaisVelha = "";
-            int maiorIdade = -1;
+        Scanner scannerFicheiro = new Scanner(new File(path));
 
-            try (BufferedReader br = new BufferedReader(new FileReader(nomeFicheiro))) {
-                String linha;
-                while ((linha = br.readLine()) != null) {
-                    // Supondo que cada linha está no formato "Nome,Idade"
-                    String[] partes = linha.split(",");
-                    String nome = partes[0].trim();
-                    int idade = Integer.parseInt(partes[1].trim());
+        int maiorIdade = 0;
+        String nomeMaiorIdade = "";
 
-                    if (idade > maiorIdade) {
-                        maiorIdade = idade;
-                        nomeMaisVelha = nome;
-                    }
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
+        while (scannerFicheiro.hasNextLine()) {
+            String linha = scannerFicheiro.nextLine();
+
+            String[] linhaDividida = linha.split(",");
+
+            if(Integer.parseInt(linhaDividida[1])>maiorIdade){ // Estamos perante uma pessoa mais velha
+                maiorIdade=Integer.parseInt(linhaDividida[1]);
+                nomeMaiorIdade=linhaDividida[0];
             }
-
-            System.out.println("A pessoa mais velha é: " + nomeMaisVelha + " com " + maiorIdade + " anos.");
         }
+
+        System.out.println("A pessoa "+nomeMaiorIdade+" é a mais velha com "+maiorIdade+" anos.");
+
+
+    }
+
+    public static void main(String[] args) throws FileNotFoundException {
+        pessoaMaisVelha("FicheirosFicha07/exercicio_06.txt");
     }
 }

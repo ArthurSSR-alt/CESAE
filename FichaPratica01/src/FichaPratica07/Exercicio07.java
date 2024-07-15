@@ -1,37 +1,43 @@
 package FichaPratica07;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class Exercicio07 {
-    public class ContadorFicheiro {
+    public static int contarLinhasFicheiro(String path) throws FileNotFoundException {
 
-        public static void main(String[] args) {
-            // Especifica o caminho do ficheiro de texto
-            String nomeFicheiro = "Files/FichaPratica07/exercicio_07.txt";
+        Scanner scannerFicheiro = new Scanner(new File(path));
 
-            int numeroDeLinhas = 0;
-            int numeroDePalavras = 0;
+        int numeroLinhas = 0;
 
-            try (BufferedReader leitor = new BufferedReader(new FileReader(nomeFicheiro))) {
-                String linha;
-
-                while ((linha = leitor.readLine()) != null) {
-                    // Incrementa o contador de linhas
-                    numeroDeLinhas++;
-
-                    // Divide a linha em palavras usando espaços como delimitador
-                    String[] palavras = linha.split("\\s+");
-                    numeroDePalavras += palavras.length;
-                }
-            } catch (IOException e) {
-                System.out.println("Ocorreu um erro ao ler o ficheiro: " + e.getMessage());
-            }
-
-            // Imprime os resultados
-            System.out.println("Número de linhas: " + numeroDeLinhas);
-            System.out.println("Número de palavras: " + numeroDePalavras);
+        while (scannerFicheiro.hasNextLine()){
+            numeroLinhas++;
+            scannerFicheiro.nextLine();
         }
+
+        return numeroLinhas;
     }
+
+
+    public static int contarPalavrasFicheiro(String path) throws FileNotFoundException {
+
+        Scanner scannerFicheiro = new Scanner(new File(path));
+
+        int numeroPalavras=0;
+
+        while (scannerFicheiro.hasNext()){
+            numeroPalavras++;
+            scannerFicheiro.next();
+        }
+
+        return numeroPalavras;
+    }
+
+    public static void main(String[] args) throws FileNotFoundException {
+
+        System.out.println("Numero Linhas: "+contarLinhasFicheiro("FicheirosFicha07/exercicio_07.txt"));
+        System.out.println("Numero Palavras: "+contarPalavrasFicheiro("FicheirosFicha07/exercicio_07.txt"));
+    }
+
 }

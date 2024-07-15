@@ -1,18 +1,14 @@
 package FichaPratica07;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 import static FichaPratica07.Exercicio07.contarLinhasFicheiro;
 
-public class Exercicio09 {
+public class ProjetoPraticoParte01 {
     public static String[][] lerCsvParaMatriz(String path) throws FileNotFoundException {
-
         String[][] matrizCompleta = new String[contarLinhasFicheiro(path) - 1][4];
-
         Scanner scannerFicheiro = new Scanner(new File(path));
-
         String linha = scannerFicheiro.nextLine();
 
         int contadorLinhaMatriz = 0;
@@ -58,7 +54,7 @@ public class Exercicio09 {
             System.out.println("\nSelecione a sua opção: ");
             opcao = input.nextInt();
 
-            switch (opcao){
+            switch (opcao) {
                 case 1: // Pesquisar por músicas de um determinado género
                     break;
 
@@ -91,3 +87,5 @@ public class Exercicio09 {
         menu();
     }
 }
+
+
