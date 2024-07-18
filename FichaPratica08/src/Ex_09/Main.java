@@ -5,6 +5,7 @@ public class Main {
         Produto produto1=new Produto("Lasanha", 23, 32);
 
         produto1.comprar(5);
+
         System.out.println("Stock: "+produto1.stock);
 
         produto1.vender(2);
@@ -12,7 +13,13 @@ public class Main {
 
         //criar os produtos e invocar os métodos comprar e vender.
 
+        produto1.comprar(10);
 
+        System.out.println("Stock: "+produto1.stock);
+
+        produto1.vender(35);
+
+        System.out.println("Stock: "+produto1.stock);
 
 
     }
